@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2022_02_17_165333) do
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.integer "likes"
-    t.integer "dislikes"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2022_02_17_165333) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.integer "likes"
-    t.integer "dislikes"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
     t.bigint "user_id", null: false
     t.bigint "blog_id", null: false
     t.datetime "created_at", precision: 6, null: false

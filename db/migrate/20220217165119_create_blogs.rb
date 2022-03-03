@@ -3,8 +3,8 @@ class CreateBlogs < ActiveRecord::Migration[6.1]
     create_table :blogs do |t|
       t.string :title
       t.text :content
-      t.integer :likes
-      t.integer :dislikes
+      t.integer :likes, default: 0
+      t.integer :dislikes, default: 0
       t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps
